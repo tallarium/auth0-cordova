@@ -45,16 +45,6 @@ function CordovaAuth(options) {
 }
 
 /**
- * @callback authorizeCallback
- * @param {Error} [err] error returned by Auth0 with the reason of the Auth failure
- * @param {Object} [result] result of the Auth request
- * @param {String} [result.accessToken] token that allows access to the specified resource server (identified by the audience parameter or by default Auth0's /userinfo endpoint)
- * @param {Number} [result.expiresIn] number of seconds until the access token expires
- * @param {String} [result.idToken] token that identifies the user
- * @param {String} [result.refreshToken] token that can be used to get new access tokens from Auth0. Note that not all clients can request them or the resource server might not allow them.
- */
-
-/**
  * Opens the OS browser and redirects to `{domain}/authorize` url in order to initialize a new authN/authZ transaction
  *
  * @method authorize
