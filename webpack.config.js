@@ -31,13 +31,23 @@ const config = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: 'string-replace-loader',
-        options: {
-          multiple: [
-            { search: '@@PACKAGE_VERSION@@', replace: package.version },
-            { search: '@@AUTH0JS_VERSION@@', replace: package.dependencies['auth0-js'] }
-          ]
-        }
+        use:[
+          {
+            loader: 'babel-loader',
+            options: {
+              presets: ['@babel/preset-env']
+            }
+          },
+          {
+            loader: 'string-replace-loader',
+            options: {
+              multiple: [
+                { search: '@@PACKAGE_VERSION@@', replace: package.version },
+                { search: '@@AUTH0JS_VERSION@@', replace: package.dependencies['auth0-js'] }
+              ]
+            }
+          }
+        ]
       }
     ]
   }
