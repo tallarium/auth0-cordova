@@ -1,5 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
+const package = require('./package.json');
 
 const config = {
 
@@ -23,6 +24,22 @@ const config = {
         if(prog === 0) console.log("[webpack]: Bundle is now invalid.");
         if(prog === 1) console.log("[webpack]: Bundle is now valid.");
     })
-  ]
+  ],
+  
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: 'string-replace-loader',
+        options: {
+          multiple: [
+            { search: '@@PACKAGE_VERSION@@', replace: package.version },
+            { search: '@@AUTH0JS_VERSION@@', replace: package.dependencies['auth0-js'] }
+          ]
+        }
+      }
+    ]
+  }
 }
 module.exports = config;

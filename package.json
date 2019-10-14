@@ -51,6 +51,7 @@
     "mocha": "^3.3.0",
     "mocha-junit-reporter": "^1.17.0",
     "mocha-multi": "^0.11.0",
+    "string-replace-loader": "^2.2.0",
     "webpack": "^2.4.1"
   }
 }
