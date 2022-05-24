@@ -36,6 +36,9 @@
     "auth0-js": "^9.18.1",
     "url-parse": "^1.5.10"
   },
+  "optionalDependencies": {
+    "@capacitor/app": "^1.1.1"
+  },
   "devDependencies": {
     "chai": "^3.5.0",
     "codecov": "^3.6.1",
