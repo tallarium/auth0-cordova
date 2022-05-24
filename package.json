@@ -37,7 +37,7 @@
     "url-parse": "^1.5.10"
   },
   "optionalDependencies": {
-    "@capacitor/app": "^1.1.1"
+    "@capacitor/browser": "^1.0.7"
   },
   "devDependencies": {
     "chai": "^3.5.0",
